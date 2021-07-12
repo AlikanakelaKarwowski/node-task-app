@@ -11,15 +11,22 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true, useUnifiedTopology: 
     }
 
     const db = client.db(databaseName)
-    db.collection('users').findOne({ name: 'Loki' }, (error, user) => {
-        if (error) {
-            return console.log('Unable to fetch')
-        }
-        console.log(user)
-    })
     db.collection('users')
-        .find({ age: 24 })
-        .toArray((error, users) => {
-            console.log(users)
+        .updateOne(
+            {
+                _id: new ObjectID('60ec983e14109577f0c9ad23'),
+            },
+            {
+                $set: {
+                    age: 2,
+                },
+            }
+        )
+        .then((result) => {
+            console.log(result)
+        })
+        .catch((error) => {
+            console.log(error)
         })
 })
+//60ec983e14109577f0c9ad23
