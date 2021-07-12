@@ -2,11 +2,6 @@
 
 const { MongoClient, ObjectID } = require('mongodb')
 
-const id = new ObjectID()
-console.log(id)
-console.log(id.id)
-console.log(id.toHexString().length)
-
 const connectionURL = 'mongodb://127.0.0.1:27017'
 const databaseName = 'task-manager'
 
@@ -16,4 +11,10 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true, useUnifiedTopology: 
     }
 
     const db = client.db(databaseName)
+    db.collection('users').findOne({ name: 'Loki' }, (error, user) => {
+        if (error) {
+            return console.log('Unable to fetch')
+        }
+        console.log(user)
+    })
 })
