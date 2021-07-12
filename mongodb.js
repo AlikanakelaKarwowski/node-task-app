@@ -17,4 +17,9 @@ MongoClient.connect(connectionURL, { useNewUrlParser: true, useUnifiedTopology: 
         }
         console.log(user)
     })
+    db.collection('users')
+        .find({ age: 24 })
+        .toArray((error, users) => {
+            console.log(users)
+        })
 })
