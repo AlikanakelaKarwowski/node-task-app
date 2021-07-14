@@ -18,8 +18,12 @@
   },
   "homepage": "https://github.com/AlikanakelaKarwowski/node-task-app#readme",
   "dependencies": {
+    "express": "^4.17.1",
     "mongodb": "^3.6.10",
     "mongoose": "^5.13.2",
     "validator": "^13.6.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.12"
   }
 }
