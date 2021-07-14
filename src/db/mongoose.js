@@ -17,31 +17,3 @@ const Task = mongoose.model('Task', {
         default: false,
     },
 })
-
-// const me = new User({
-//     name: '   Alexander   ',
-//     email: '  MYEmail@mlm.COM',
-//     password: '  passwor',
-//     age: 18,
-// })
-
-// me.save()
-//     .then(() => {
-//         console.log(me)
-//     })
-//     .catch((err) => {
-//         console.log('Error!', err)
-//     })
-
-const groomer = new Task({
-    description: '    Call the dog groomer    ',
-})
-
-groomer
-    .save()
-    .then(() => {
-        console.log(groomer)
-    })
-    .catch((err) => {
-        console.log('Error!', err)
-    })
