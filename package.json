@@ -19,6 +19,7 @@
   "homepage": "https://github.com/AlikanakelaKarwowski/node-task-app#readme",
   "dependencies": {
     "mongodb": "^3.6.10",
-    "mongoose": "^5.13.2"
+    "mongoose": "^5.13.2",
+    "validator": "^13.6.0"
   }
 }
