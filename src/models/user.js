@@ -1,6 +1,7 @@
 const { model, Schema } = require('mongoose')
 const { isEmail } = require('validator')
 const bcrypt = require('bcryptjs')
+const jwt = require('jsonwebtoken')
 
 const userSchema = new Schema({
     name: {
@@ -37,7 +38,23 @@ const userSchema = new Schema({
         min: [18, 'Must be 18 y/o or older'],
         max: [120, 'You are too old'],
     },
+    tokens: [
+        {
+            token: {
+                type: String,
+                required: true,
+            },
+        },
+    ],
 })
+
+userSchema.methods.generateAuthToken = async function () {
+    const user = this
+    const token = jwt.sign({ _id: user.id.toString() }, 'this is a test function')
+    user.tokens = user.tokens.concat({ token })
+    await user.save()
+    return token
+}
 
 userSchema.statics.findByCredentials = async (email, password) => {
     const user = await User.findOne({ email })
