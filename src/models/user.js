@@ -3,50 +3,55 @@ const { isEmail } = require('validator')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const Task = require('./task')
-const userSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: true,
-        trim: true,
-    },
-    email: {
-        type: String,
-        unique: true,
-        required: true,
-        trim: true,
-        lowercase: true,
-        validate(value) {
-            if (!isEmail(value)) {
-                throw new Error('Email is invalid')
-            }
+const userSchema = new mongoose.Schema(
+    {
+        name: {
+            type: String,
+            required: true,
+            trim: true,
         },
-    },
-    password: {
-        type: String,
-        required: true,
-        trim: true,
-        minLength: 7,
-        validate(value) {
-            if (value.toLowerCase().includes('password')) {
-                throw new Error('Your password cant contain the word password')
-            }
-        },
-    },
-    age: {
-        type: Number,
-        required: true,
-        min: [18, 'Must be 18 y/o or older'],
-        max: [120, 'You are too old'],
-    },
-    tokens: [
-        {
-            token: {
-                type: String,
-                required: true,
+        email: {
+            type: String,
+            unique: true,
+            required: true,
+            trim: true,
+            lowercase: true,
+            validate(value) {
+                if (!isEmail(value)) {
+                    throw new Error('Email is invalid')
+                }
             },
         },
-    ],
-})
+        password: {
+            type: String,
+            required: true,
+            trim: true,
+            minLength: 7,
+            validate(value) {
+                if (value.toLowerCase().includes('password')) {
+                    throw new Error('Your password cant contain the word password')
+                }
+            },
+        },
+        age: {
+            type: Number,
+            required: true,
+            min: [18, 'Must be 18 y/o or older'],
+            max: [120, 'You are too old'],
+        },
+        tokens: [
+            {
+                token: {
+                    type: String,
+                    required: true,
+                },
+            },
+        ],
+    },
+    {
+        timestamps: true,
+    }
+)
 
 userSchema.virtual('tasks', {
     ref: 'Task',
