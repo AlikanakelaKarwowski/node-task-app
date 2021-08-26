@@ -30,9 +30,9 @@
     "@types/node" "*"
 
 "@types/node@*":
-  version "16.4.14"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.4.14.tgz#e27705ec2278b2355bd59f1952de23a152b9f208"
-  integrity sha512-GZpnVRNtv7sHDXIFncsERt+qvj4rzAgRQtnvzk3Z7OVNtThD2dHXYCMDNc80D5mv4JE278qo8biZCwcmkbdpqw==
+  version "16.6.1"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.6.1.tgz#aee62c7b966f55fc66c7b6dfa1d58db2a616da61"
+  integrity sha512-Sr7BhXEAer9xyGuCN3Ek9eg9xPviCF2gfu9kTfuU2HkTVAMYSDeX40fvpmo72n5nansg3nsBjuQBrsS28r+NUw==
 
 abbrev@1:
   version "1.1.1"
@@ -1055,9 +1055,9 @@ optional-require@1.0.x:
   integrity sha512-RV2Zp2MY2aeYK5G+B/Sps8lW5NHAzE5QClbFP15j+PWmP+T9PxlJXBOOLoSAdgwFvS4t0aMR4vpedMkbHfh0nA==
 
 optional-require@^1.0.3:
-  version "1.1.6"
-  resolved "https://registry.yarnpkg.com/optional-require/-/optional-require-1.1.6.tgz#886693c22d166c79377137dfb60cd653fa49a967"
-  integrity sha512-ZO2GGh1A84LV90OAIsMDmIJ5k/f7crSjP4aJSuLudp7C7wfVOAoyWWHV8Jf3ZMHyNHwpLD/DGhzaxbbN/duF+g==
+  version "1.1.7"
+  resolved "https://registry.yarnpkg.com/optional-require/-/optional-require-1.1.7.tgz#9ab5b254f59534108d4b2201d9ae96a063abc015"
+  integrity sha512-cIeRZocXsZnZYn+SevbtSqNlLbeoS4mLzuNn4fvXRMDRNhTGg0sxuKXl0FnZCtnew85LorNxIbZp5OeliILhMw==
   dependencies:
     require-at "^1.0.6"
 
